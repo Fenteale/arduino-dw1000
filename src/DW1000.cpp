@@ -1479,6 +1479,7 @@ boolean DW1000Class::isReceiveTimeout() {
 boolean DW1000Class::isClockProblem() {
 	boolean clkllErr, rfllErr;
 	clkllErr = getBit(_sysstatus, LEN_SYS_STATUS, CLKPLL_LL_BIT);
+	// here is maybe the problem
 	rfllErr  = getBit(_sysstatus, LEN_SYS_STATUS, RFPLL_LL_BIT);
 	if(clkllErr || rfllErr) {
 		return true;
